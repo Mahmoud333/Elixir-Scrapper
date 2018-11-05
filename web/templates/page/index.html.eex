@@ -1,0 +1,37 @@
+<!-- <div class="jumbotron">
+  <h2><%= gettext "Welcome to %{name}", name: "Phoenix!" %></h2>
+  <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
+</div> -->
+
+<div class="row marketing">
+
+  <div class="col-lg-6"> <!--Create Panel On The Side -->
+    <h3>Newest</h3> <!--Call It Newest -->
+    <ul>
+      <%= for news <- hn_newest() do %>
+        <li><a href= "<%= news.url %>"><%= news.title %></a></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="col-lg-6"> <!--Create Panel On The Side -->
+    <h3>Home - Top Rated Today</h3> <!--Call It Newest -->
+    <ul>
+      <%= for news <- hn_top_rated() do %>
+        <li><a href= "<%= news.url %>"><%= news.title %></a></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="col-lg-6"> <!--Create Panel On The Side -->
+    <h3>Recent Jobs Posted</h3> <!--Call It Newest -->
+    <ul>
+      <%= for jobs <- hn_jobs() do %>
+        <li><a href= "<%= jobs.url %>"><%= jobs.title %></a></li>
+      <% end %>
+    </ul>
+  </div>
+
+
+
+</div>
